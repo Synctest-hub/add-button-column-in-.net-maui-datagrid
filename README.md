@@ -6,7 +6,7 @@ The .NET MAUI [SfDataGrid](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.D
 Create the ButtonCommand with execute method to delete current row when performing click action on the button.
 
 ```C#
-public class ViewModel : INotifyPropertyChanged
+    public class ViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<OrderInfo> orderInfo;
         private ICommand buttonCommand;

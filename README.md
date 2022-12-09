@@ -1,6 +1,6 @@
 # add-button-column-in-.net-maui-datagrid
 
-The .NET MAUI [DataGrid](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html)(SfDataGrid) allows to load any template views in the [DataGridTemplateColumn](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataGridTemplateColumn.html). In this article, you can learn about how to load the button for specific column and perform any action on the button click.
+The [.NET MAUI DataGrid](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html)(SfDataGrid) allows to load any template views in the [DataGridTemplateColumn](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataGridTemplateColumn.html). In this article, you can learn about how to load the button for specific column and perform any action on the button click.
 
 ## C#
 Create the ButtonCommand with execute method to delete current row when performing click action on the button.

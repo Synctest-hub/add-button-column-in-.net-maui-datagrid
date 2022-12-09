@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataGridMAUI"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="DataGridMAUI.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="ViewModel"></local:ViewModel>
+    </ContentPage.BindingContext>
+    <syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumnsMode="None" ItemsSource="{Binding OrderInfoCollection}" DefaultColumnWidth="130" GridLinesVisibility="Both" HeaderGridLinesVisibility="Both">
+        <syncfusion:SfDataGrid.Columns>
+            <syncfusion:DataGridNumericColumn MappingName="OrderID" HeaderText="ID"></syncfusion:DataGridNumericColumn>
+            <syncfusion:DataGridTextColumn MappingName="Customer" HeaderText="Name"></syncfusion:DataGridTextColumn>
+            <syncfusion:DataGridTextColumn MappingName="Country"></syncfusion:DataGridTextColumn>
+            <syncfusion:DataGridTemplateColumn MappingName="CustomerID" HeaderText="">
+                <syncfusion:DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Text="Delete" Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ButtonCommand}"  CommandParameter="{Binding .}"></Button>
+                    </DataTemplate>
+                </syncfusion:DataGridTemplateColumn.CellTemplate>
+            </syncfusion:DataGridTemplateColumn>
+        </syncfusion:SfDataGrid.Columns>
+    </syncfusion:SfDataGrid>
+
+</ContentPage>

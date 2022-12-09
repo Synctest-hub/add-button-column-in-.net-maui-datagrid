@@ -1,11 +1,15 @@
-# add-button-column-in-.net-maui-datagrid
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
-The [.NET MAUI DataGrid](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html)(SfDataGrid) allows to load any template views in the [DataGridTemplateColumn](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataGridTemplateColumn.html). In this article, you can learn about how to load the button for specific column and perform any action on the button click.
-
-## C#
-Create the ButtonCommand with execute method to delete current row when performing click action on the button.
-
-```C#
+namespace DataGridMAUI
+{
     public class ViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<OrderInfo> orderInfo;
@@ -50,6 +54,7 @@ Create the ButtonCommand with execute method to delete current row when performi
             orderInfo.Add(new OrderInfo(1017, "Lenny Lin", "France", "BONAP"));
             orderInfo.Add(new OrderInfo(1018, "John Carter", "Canada", "BOTTM"));
             orderInfo.Add(new OrderInfo(1019, "Laura King", "UK", "AROUT"));
+
         }
 
         private void DeleteRecord(object orderInfo)
@@ -69,25 +74,4 @@ Create the ButtonCommand with execute method to delete current row when performi
 
         #endregion
     }
-
-```
-
-## XAML
-Create a DataGridTemplateColumn with button inside and bind a command property of the button to the ButtonCommand property of ViewModel.
-
-```XAML
-<syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumnsMode="None" ItemsSource="{Binding OrderInfoCollection}" DefaultColumnWidth="130" GridLinesVisibility="Both" HeaderGridLinesVisibility="Both">
-        <syncfusion:SfDataGrid.Columns>
-            <syncfusion:DataGridNumericColumn MappingName="OrderID" HeaderText="ID"></syncfusion:DataGridNumericColumn>
-            <syncfusion:DataGridTextColumn MappingName="Customer" HeaderText="Name"></syncfusion:DataGridTextColumn>
-            <syncfusion:DataGridTextColumn MappingName="Country"></syncfusion:DataGridTextColumn>
-            <syncfusion:DataGridTemplateColumn MappingName="CustomerID">
-                <syncfusion:DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate>
-                        <Button Text="Delete" Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ButtonCommand}"  CommandParameter="{Binding .}"></Button>
-                    </DataTemplate>
-                </syncfusion:DataGridTemplateColumn.CellTemplate>
-            </syncfusion:DataGridTemplateColumn>
-        </syncfusion:SfDataGrid.Columns>
-    </syncfusion:SfDataGrid>
-```
+}

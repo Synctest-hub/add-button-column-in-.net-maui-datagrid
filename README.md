@@ -1,9 +1,9 @@
 # add-button-column-in-.net-maui-datagrid
 
-The [.NET MAUI DataGrid](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html)(SfDataGrid) allows to load any template views in the [DataGridTemplateColumn](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataGridTemplateColumn.html). In this article, you can learn about how to load the button for specific column and perform any action on the button click.
+The [.NET MAUI DataGrid](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.SfDataGrid.html)(SfDataGrid) allows loading of any views in the [DataGridTemplateColumn](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataGridTemplateColumn.html). In this article, you can learn about how to load the button for specific column and perform any action on the button click.
 
 ## C#
-Create the ButtonCommand with execute method to delete current row when performing click action on the button.
+Create the ButtonCommand using execute method to delete the current row when performing the click action on the button.
 
 ```C#
     public class ViewModel : INotifyPropertyChanged
@@ -73,7 +73,7 @@ Create the ButtonCommand with execute method to delete current row when performi
 ```
 
 ## XAML
-Create a DataGridTemplateColumn with button inside and bind a command property of the button to the ButtonCommand property of ViewModel.
+Create a DataGridTemplateColumn with a button inside and bind a buttons’ Command property to the ViewModels’ ButtonCommand property.
 
 ```XAML
 <syncfusion:SfDataGrid x:Name="dataGrid" AutoGenerateColumnsMode="None" ItemsSource="{Binding OrderInfoCollection}" DefaultColumnWidth="130" GridLinesVisibility="Both" HeaderGridLinesVisibility="Both">
